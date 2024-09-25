@@ -1,0 +1,24 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/navbar.ejs') %>
+
+<div class="container mx-auto">
+    <h2> Search Result: </h2>
+        <% if (card.trim() === '') { %>
+            <br><br>
+            <div class="container d-flex">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">No matching result.</h5>
+                        <h6 class="card-subtitle mb-2 text-body-secondary"> try other words. </h6>
+                        <p class="card-text"> NOTE: This search is based on advertisement titles not descriptions! </p>
+                    </div>
+                </div>
+            </div>
+        <% } else { %>
+    <div class="row row-cols-1 row-cols-md-3 g-4">
+           <%- card %>
+    </div>
+        <% }  %>
+</div>
+
+<%- include('includes/end.ejs') %>

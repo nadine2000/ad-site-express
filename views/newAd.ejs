@@ -1,0 +1,42 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/navbar.ejs') %>
+
+<div class="container">
+    <div class="row justify-content-center align-items-center">
+        <form action="/new-ad/create" method="post">
+            <br>
+            <%= user %>
+            <h3>Send your Ad:</h3>
+            <div class="col-md-6">
+                <label for="adTitle" class="form-label"> <b>Advertisement Title:</b></label>
+                <input type="text" class="form-control <%= show[0][0] %>" id="adTitle" name="adTitle" maxlength="20" required>
+                <div class="text-danger invalid-feedback <%= show[0][1] %>"> <%= error[0] %> </div>
+            </div>
+            <div class="col-md-6">
+                <label for="price" class="form-label"> <b>Price:</b></label>
+                <input type="text" class="form-control <%= show[2][0] %>" id="price" name="price"  required>
+                <div class="text-danger invalid-feedback <%= show[2][1] %>"> <%= error[2] %></div>
+            </div>
+            <div class="col-md-6">
+                <label for="phone" class="form-label"><b>Phone Number:</b></label>
+                <input type="text" class="form-control <%= show[3][0] %>" id="phone" name="phone">
+                <div class="text-danger invalid-feedback <%= show[3][1] %>"> <%= error[3] %> </div>
+            </div>
+            <div class="col-md-6">
+                <label for="email" class="form-label"><b>Email:</b></label>
+                <input type="text" class="form-control <%= show[4][0] %>" id="email"  name="email" required>
+                <div class="text-danger invalid-feedback <%= show[4][1] %>"> <%= error[4] %></div>
+            </div>
+            <div class="col-md-6">
+                <label for="description" class="form-label"> <b>Long Description:</b></label>
+                <textarea class="form-control <%= show[1][0] %>" id="description" name="description" maxlength="200" rows="4"></textarea>
+                <div class="text-danger invalid-feedback <%= show[1][1] %>"> <%= error[1] %> </div>
+            </div>
+            <div class="col-12">
+                <button class="btn btn-secondary" type="submit">Submit form</button>
+            </div>
+        </form>
+    </div>
+</div>
+
+<%- include('includes/end.ejs') %>

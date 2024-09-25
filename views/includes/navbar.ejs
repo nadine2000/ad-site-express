@@ -1,0 +1,30 @@
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="/">
+            <img src="https://assets.yad2.co.il/common/logo-default.svg" alt="">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="<%= logout ? '/admin/page' : '/login/log' %>">Admin Area</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/new-ad/create">New AD</a>
+                </li>
+            </ul>
+            <form action="/logout/exit" method="post" class="<%= logout ? '' : 'd-none' %>">
+                <button class="btn btn-link text-danger" type="submit">logout</button>
+            </form>
+            <form action="/search/find" method="get" class="d-flex" role="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search" name="search">
+                <button class="btn btn-outline-success" type="submit">Search</button>
+            </form>
+        </div>
+    </div>
+</nav>

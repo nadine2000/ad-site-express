@@ -1,0 +1,16 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/navbar.ejs') %>
+
+
+<br><br>
+<div class="container d-flex">
+    <div class="card text-bg-danger">
+        <div class="card-body">
+            <h5 class="card-title"> UNEXPECTED ERROR:</h5>
+            <h6 class="card-subtitle mb-2 text-body-secondary"> ERROR: <%= error.name %>, STATUS : <%= error.status %> </h6>
+            <p class="card-text"> <%= error.message %> </p> <br>
+        </div>
+    </div>
+</div>
+
+<%- include('includes/end.ejs') %>

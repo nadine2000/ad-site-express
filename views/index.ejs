@@ -1,0 +1,40 @@
+<%- include('includes/head.ejs') %>
+<%- include('includes/navbar.ejs') %>
+
+<div>
+    <br><br><br>
+    <% if (message !== '') { %>
+        <br><br><br><br><br>
+        <div class="container d-flex justify-content-center">
+            <div class="card">
+                <div class="card-body">
+                    <h5 class="card-title">Done!</h5>
+                    <h6 class="card-subtitle mb-2 text-body-secondary"> wait a little more.</h6>
+                    <p class="card-text"> your ad was successfully posted and is waiting for approval.</p>
+                </div>
+            </div>
+        </div>
+    <% } %>
+</div>
+
+
+<div class="row row-cols-1 row-cols-md-3 g-4">
+    <% if (card !== '-') { %>
+        <%- card %>
+    <% } else { %>
+
+    <div class="container d-flex justify-content-center">
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">No ADS Yet!</h5>
+                <h6 class="card-subtitle mb-2 text-body-secondary">Be the first to post!</h6>
+                <p class="card-text"> Post your ad in YAD-2, wait until the admin approves your ad, then, everyone can see it.</p>
+                <p>click on <b>New AD</b> in the navbar or in the link below</p>
+                <a href="/new-ad/create" class="card-link"> <b>New AD</b></a>
+            </div>
+        </div>
+    </div>
+        <% }  %>
+</div>
+
+<%- include('includes/end.ejs') %>
